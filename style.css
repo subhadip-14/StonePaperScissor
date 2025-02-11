@@ -1,75 +1,107 @@
-/* style.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .game-container {
-    text-align: center;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #4caf50;
-  }
-  
-  #choices {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .choice {
-    font-size: 1.2rem;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .choice:hover {
-    background-color: #45a049;
-  }
-  
-  #results p, #score p {
-    font-size: 1rem;
-    margin: 5px 0;
-  }
-  
-  #results span, #score span {
-    font-weight: bold;
-    color: #4caf50;
-  }
-  
-  #exit-button {
-    margin-top: 20px;
-    font-size: 1rem;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #exit-button:hover {
-    background-color: #d32f2f;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+#choices {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.choice {
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.choice:hover {
+  background-color: #45a049;
+}
+
+.choice:active {
+  transform: scale(0.9);
+}
+
+#results p, #score p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+#results span, #score span {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+#exit-button {
+  margin-top: 20px;
+  font-size: 1rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#exit-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Shaking Hand Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}
+
+.shaking {
+  display: inline-block;
+  font-size: 2rem;
+  animation: shake 0.3s infinite; /* Keeps shaking until speech ends */
+}
+
+/* Flashing Result Animation */
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.flash {
+  animation: flash 0.5s ease-in-out;
+}
+
+.winner {
+  background-color: #c8e6c9;
+  transition: background-color 0.5s;
+}
